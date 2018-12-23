@@ -6,7 +6,7 @@
 #####################################################################
 from bottle import run, route, template, static_file, TEMPLATE_PATH, default_app, debug,request
 from hashlib import sha256
-TEMPLATE_PATH.insert(0,'./views')
+TEMPLATE_PATH.insert(0,'./pages')
 
 #static file function
 @route("/static/<filename>")
