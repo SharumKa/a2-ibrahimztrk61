@@ -4,9 +4,21 @@
 ### You can alter the below code to make your own dynamic website.
 ### The landing page for assignment 3 should be at /
 #####################################################################
+from bottle import run, route, template, static_file, TEMPLATE_PATH, default_app, debug,request
+from hashlib import sha256
+TEMPLATE_PATH.insert(0,'./views')
 
-from bottle import route, run, default_app, debug
-
+#static file function
+@route("/static/<filename>")
+def static_file_callback(filename):
+    return static_file(filename, root="./files")
+#defining functions for every page
+def index():
+    return template('index')
+def main():
+    return template('models')
+def desserts():
+    return template('photographs')
 def htmlify(title,text):
     page = """
         <!doctype html>
