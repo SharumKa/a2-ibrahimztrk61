@@ -15,9 +15,9 @@ def static_file_callback(filename):
 #defining functions for every page
 def index():
     return template('index')
-def main():
+def models():
     return template('models')
-def desserts():
+def photographs():
     return template('photographs')
 def htmlify(title,text):
     page = """
