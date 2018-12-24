@@ -37,7 +37,7 @@ def htmlify(title,text):
 
 def index():
     return htmlify("My lovely website",
-                   "This is going to be an awesome website, when it is finished.")
+                   "deneme.")
 
 route("/","GET",index)
 route("/models","GET",models)
