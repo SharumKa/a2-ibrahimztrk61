@@ -11,7 +11,7 @@ TEMPLATE_PATH.insert(0,'./pages')
 #static file function
 @route("/pages/<filename>")
 def pages_file_callback(filename):
-    return static_file(filename, root="./files")
+    return static_file(filename, root="./pages")
 #defining functions for every page
 def index():
     return html('index')
