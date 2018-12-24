@@ -9,8 +9,8 @@ from hashlib import sha256
 TEMPLATE_PATH.insert(0,'./pages')
 
 #static file function
-@route("/static/<filename>")
-def static_file_callback(filename):
+@route("/pages/<filename>")
+def pages_file_callback(filename):
     return static_file(filename, root="./files")
 #defining functions for every page
 def index():
