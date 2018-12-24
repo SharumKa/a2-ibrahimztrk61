@@ -35,11 +35,7 @@ def htmlify(title,text):
     """ % (title,text)
     return page
 
-def index():
-    return htmlify("My lovely website",
-                   "deneme.")
-
-route("/","GET",index)
+route("/index","GET",index)
 route("/models","GET",models)
 route("/photographs","GET",photographs)
 
