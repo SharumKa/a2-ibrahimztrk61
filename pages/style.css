@@ -1,0 +1,53 @@
+.head
+{
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 16px;
+    text-align: center;
+    border-spacing: 5px;
+    color: black;
+    text-align:center;
+    font-size:95px;
+}
+.title{
+    font-size: 30px;
+    background: green;
+
+}
+.brand{
+    color:red;
+    font-size: large;
+    font-family: "Rage Italic";
+}
+.model{
+    color:blue;
+
+    font-size: medium;
+    font-family: "Times New Roman";
+}
+.list
+{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    display: block;
+    text-align: center;
+}
+
+.table {
+    alignment: center;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #000000;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
