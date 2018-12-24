@@ -14,11 +14,11 @@ def static_file_callback(filename):
     return static_file(filename, root="./files")
 #defining functions for every page
 def index():
-    return template('index')
+    return html('index')
 def models():
-    return template('models')
+    return html('models')
 def photographs():
-    return template('photographs')
+    return html('photographs')
 def htmlify(title,text):
     page = """
         <!doctype html>
