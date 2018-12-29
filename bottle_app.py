@@ -1,21 +1,13 @@
 from bottle import run, route, template, static_file, TEMPLATE_PATH, default_app, debug, request
 from hashlib import sha256
 
-<<<<<<< HEAD
 TEMPLATE_PATH.insert(0, './pages')
 
 
 # static file function
-#@route("/pages/<filename>")
-#def static_file_callback(filename):
-#    return static_file(filename, root="./pages")
-
-
-
-
-@route('/static/<filename>')
-def server_static(filename):
-    return static_file(filename, root='./pages')
+@route("/static/<filename>")
+def static_file_callback(filename):
+    return static_file(filename, root="./padgges")
 
 
 def login():
@@ -28,29 +20,18 @@ def login():
 def index():
     return template('index')
 
+
+@route("/models")
 def models():
     return template('models')
 
+
+@route("/photographs")
 def photographs():
     return template('photographs')
 
 
-route("/index", "GET", index)
-route("/models", "GET", models)
-route("/photographs", "GET", photographs)
-=======
-#static file function
-@route("/pages/<filename>")
-def pages_file_callback(filename):
-    return static_file(filename, root="./pages")
-#defining functions for every page
-def index():
-    return html('index')
-def models():
-    return html('models')
-def photographs():
-    return html('photographs')
-def htmlify(title,text):
+def htmlify(title, text):
     page = """
         <!doctype html>
         <html lang="en">
@@ -63,13 +44,10 @@ def htmlify(title,text):
             </body>
         </html>
 
-    """ % (title,text)
+    """ % (title, text)
     return page
 
-route("/index","GET",index)
-route("/models","GET",models)
-route("/photographs","GET",photographs)
->>>>>>> 94dd0887918d642aaa95805802391811bafe434a
+
 
 #####################################################################
 ### Don't alter the below code.
