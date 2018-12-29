@@ -1,4 +1,4 @@
-from bottle import run, route, template, static_file, TEMPLATE_PATH, default_app, debug, request
+from bottle import *
 from hashlib import sha256
 
 
