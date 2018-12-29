@@ -6,24 +6,24 @@ TEMPLATE_PATH.insert(0, './pages')
 
 # static file function
 @route("/static/<filename>")
-def static_file_callback(filename):
-    return static_file(filename, root="./padgges")
+def server_static(filename):
+    return static_file(filename, root="./pages")
 
 
 def login():
     return '<h1>on login</h1>'
 
-
+@route("/")
 # defining functions for every page
 
-@route("/")
+@route("/index.html")
 def index():
-    return template('index')
+    return template('index.html')
 
 
-@route("/models")
+@route("/models.html")
 def models():
-    return template('models')
+    return template('models.html')
 
 
 @route("/photographs")
