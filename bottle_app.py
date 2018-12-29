@@ -1,6 +1,7 @@
 from bottle import run, route, template, static_file, TEMPLATE_PATH, default_app, debug, request
 from hashlib import sha256
 
+<<<<<<< HEAD
 TEMPLATE_PATH.insert(0, './pages')
 
 
@@ -14,7 +15,7 @@ TEMPLATE_PATH.insert(0, './pages')
 
 @route('/static/<filename>')
 def server_static(filename):
-    return static_file(filename, root='/C:Users/ozturk/Documents/GitHub/a2-ibrahimztrk61')
+    return static_file(filename, root='./pages')
 
 
 def login():
@@ -37,6 +38,38 @@ def photographs():
 route("/index", "GET", index)
 route("/models", "GET", models)
 route("/photographs", "GET", photographs)
+=======
+#static file function
+@route("/pages/<filename>")
+def pages_file_callback(filename):
+    return static_file(filename, root="./pages")
+#defining functions for every page
+def index():
+    return html('index')
+def models():
+    return html('models')
+def photographs():
+    return html('photographs')
+def htmlify(title,text):
+    page = """
+        <!doctype html>
+        <html lang="en">
+            <head>
+                <meta charset="utf-8" />
+                <title>%s</title>
+            </head>
+            <body>
+            %s
+            </body>
+        </html>
+
+    """ % (title,text)
+    return page
+
+route("/index","GET",index)
+route("/models","GET",models)
+route("/photographs","GET",photographs)
+>>>>>>> 94dd0887918d642aaa95805802391811bafe434a
 
 #####################################################################
 ### Don't alter the below code.
